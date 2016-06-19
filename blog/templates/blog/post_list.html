@@ -7,10 +7,13 @@
 			<h1><a href="">Oto jestem!</a></h1>
 		</div>
 
-		<div>
-			<p>published: 19.06.2014, 12:14</p>
-			<h2><a href="">Pacz, post.</a></h2>
-			<p>Bla bla nie umiem into lorem ipsum.</p>
-		</div>
+		{% for post in posts %}
+
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>	
+			</div>
+		{% endfor %}
 	</body>
 </html>
